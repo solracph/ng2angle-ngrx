@@ -5,6 +5,22 @@ const Home = {
     icon: 'icon-home'
 };
 
+const MrokerLeadManagement = {
+    text: 'Lead',
+    link: '/lead',
+    icon: 'icon-home',
+    submenu: [
+        {
+            text: "Prospect Tracking",
+            link: "/lead/prospect-tracking"
+        },
+        {
+            text: "Prospective Members",
+            link: "/lead/prospective-members"
+        }
+    ]
+};
+
 const Material = {
     text: "Material",
     link: "/material",
@@ -55,6 +71,7 @@ const headingMain = {
 
 export const menu = [
     headingMain,
+    MrokerLeadManagement,
     Home,
     Material
 ];
