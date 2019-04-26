@@ -6,7 +6,7 @@ import { Reason } from '../models/reasons';
 export enum ActionTypes {
     GetSources = '[Prospect Tracking/API] Get Sources',
     GetSourcesSuccess = '[Prospect Tracking/API] Get Sources Success',
-    GetSourcesSuccess = '[Prospect Tracking/API] Get Sources Fail',
+    GetSourcesFail = '[Prospect Tracking/API] Get Sources Fail',
 
     GetOutcomes = '[Prospect Tracking/API] Get Outcomes',
     GetOutcomesSuccess = '[Prospect Tracking/API] Get Outcomes Success',
