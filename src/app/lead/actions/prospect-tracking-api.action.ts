@@ -10,9 +10,11 @@ export enum ActionTypes {
 
     GetOutcomes = '[Prospect Tracking/API] Get Outcomes',
     GetOutcomesSuccess = '[Prospect Tracking/API] Get Outcomes Success',
+    GetOutcomesFail = '[Prospect Tracking/API] Get Outcomes Fail',
     
     GetReasons = '[Prospect Tracking/API] Get Reasons',
-    GetReasonsSuccess = '[Prospect Tracking/API] Get Reasons Success'
+    GetReasonsSuccess = '[Prospect Tracking/API] Get Reasons Success',
+    GetReasonsFail = '[Prospect Tracking/API] Get Reasons Fail',
 }
 
 export class GetSources implements Action {
@@ -38,6 +40,11 @@ export class GetOutcomesSuccess implements Action {
     constructor(public payload: Outcome[] ){}
 }
 
+export class GetOutcomesFail implements Action {
+    readonly type = ActionTypes.GetOutcomesFail;
+    constructor(public payload: any ){}
+}
+
 export class GetReasons implements Action {
     readonly type = ActionTypes.GetReasons;
 }
@@ -47,11 +54,19 @@ export class GetReasonsSuccess implements Action {
     constructor(public payload: Reason[] ){}
 }
 
+export class GetReasonsFail implements Action {
+    readonly type = ActionTypes.GetReasonsFail;
+    constructor(public payload: any ){}
+}
+
 export type Actions = 
 | GetSources
 | GetSourcesSuccess
+| GetSourcesFail
 | GetOutcomes
 | GetOutcomesSuccess
+| GetOutcomesFail
 | GetReasons 
 | GetReasonsSuccess 
-| GetSourcesFail;
+| GetReasonsFail
+;
