@@ -19,4 +19,8 @@ export class ProspectTrackingService {
   getReasons(): Observable<any> {
     return this._http.get<any>(`${environment.apiUrl}reasons.json`);
   }
+
+  getPlans(): Observable<any> {
+    return this._http.get<any>(`${environment.apiUrl}plans.json`);
+  }
 }

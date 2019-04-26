@@ -24,6 +24,12 @@ export const prospectTrackingReducers = (
                 reasons: action.payload
             };  
         }
+        case ActionTypes.GetPlansSuccess: {
+            return {
+                ...state,
+                plans: action.payload
+            };  
+        }
         default:
             return state;
     }

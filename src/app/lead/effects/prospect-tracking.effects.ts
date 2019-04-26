@@ -12,6 +12,8 @@ import {
     GetOutcomesSuccess,
     GetReasons,
     GetReasonsSuccess,
+    GetPlans,
+    GetPlansSuccess,
     ActionTypes
 } from '../actions/prospect-tracking-api.action';
 import { ProspectTrackingService } from '../services/prospect-tracking.service';
@@ -44,5 +46,12 @@ export class ProspectTrackingEffects {
       ofType<GetReasons>(ActionTypes.GetReasons),
       switchMap(() => this.prospectTrackingService.getReasons()),
       switchMap((response: any) => of(new GetReasonsSuccess(response.reasons)))
+    );
+
+    @Effect()
+    getPlans$ = this.actions$.pipe(
+      ofType<GetPlans>(ActionTypes.GetPlans),
+      switchMap(() => this.prospectTrackingService.getPlans()),
+      switchMap((response: any) => of(new GetPlansSuccess(response.plans)))
     );
 }

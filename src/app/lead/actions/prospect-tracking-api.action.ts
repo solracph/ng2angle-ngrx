@@ -1,7 +1,5 @@
-import {  Action } from '@ngrx/store';
-import { Source } from '../models/source';
-import { Outcome } from '../models/outcome';
-import { Reason } from '../models/reasons';
+import { Action } from '@ngrx/store';
+import { Source, Outcome, Reason, Plans } from '../models';
 
 export enum ActionTypes {
     GetSources = '[Prospect Tracking/API] Get Sources',
@@ -11,7 +9,10 @@ export enum ActionTypes {
     GetOutcomesSuccess = '[Prospect Tracking/API] Get Outcomes Success',
     
     GetReasons = '[Prospect Tracking/API] Get Reasons',
-    GetReasonsSuccess = '[Prospect Tracking/API] Get Reasons Success'
+    GetReasonsSuccess = '[Prospect Tracking/API] Get Reasons Success',
+
+    GetPlans = '[Prospect Tracking/API] Get Plans',
+    GetPlansSuccess = '[Prospect Tracking/API] Get Plans Success'
 }
 
 export class GetSources implements Action {
@@ -41,10 +42,21 @@ export class GetReasonsSuccess implements Action {
     constructor(public payload: Reason[] ){}
 }
 
+export class GetPlans implements Action{
+    readonly type = ActionTypes.GetPlans;
+}
+
+export class GetPlansSuccess implements Action{
+    readonly type = ActionTypes.GetPlansSuccess;
+    constructor(public payload: Plans[] ) {}
+}
+
 export type Actions = 
 GetSources | 
 GetSourcesSuccess | 
 GetOutcomes | 
 GetOutcomesSuccess |
 GetReasons |
-GetReasonsSuccess ;
+GetReasonsSuccess |
+GetPlans |
+GetPlansSuccess;
