@@ -6,6 +6,7 @@ import { Reason } from '../models/reasons';
 export enum ActionTypes {
     GetSources = '[Prospect Tracking/API] Get Sources',
     GetSourcesSuccess = '[Prospect Tracking/API] Get Sources Success',
+    GetSourcesSuccess = '[Prospect Tracking/API] Get Sources Fail',
 
     GetOutcomes = '[Prospect Tracking/API] Get Outcomes',
     GetOutcomesSuccess = '[Prospect Tracking/API] Get Outcomes Success',
@@ -21,6 +22,11 @@ export class GetSources implements Action {
 export class GetSourcesSuccess implements Action {
     readonly type = ActionTypes.GetSourcesSuccess;
     constructor(public payload: Source[] ){}
+}
+
+export class GetSourcesFail implements Action {
+    readonly type = ActionTypes.GetSourcesFail;
+    constructor(public payload: any ){}
 }
 
 export class GetOutcomes implements Action {
@@ -42,9 +48,10 @@ export class GetReasonsSuccess implements Action {
 }
 
 export type Actions = 
-GetSources | 
-GetSourcesSuccess | 
-GetOutcomes | 
-GetOutcomesSuccess |
-GetReasons |
-GetReasonsSuccess ;
+| GetSources
+| GetSourcesSuccess
+| GetOutcomes
+| GetOutcomesSuccess
+| GetReasons 
+| GetReasonsSuccess 
+| GetSourcesFail;
